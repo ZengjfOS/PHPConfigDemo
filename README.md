@@ -4,5 +4,7 @@
 
 * [ini configure demo](ini.php)
 * [json configure demo](json.php)
+  * 支持直接解析json文件；
+  * 支持解析json字符串之后直接添加属性；
 
 

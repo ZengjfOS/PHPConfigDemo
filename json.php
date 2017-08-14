@@ -3,14 +3,14 @@
     $SystemType = exec ("uname -m");
 
     // 加载并解析ini配置文件
-	$string  = file_get_contents("config/SystemInfo.json");
-	$json_array = json_decode($string, true);
+    $string  = file_get_contents("config/SystemInfo.json");
+    $json_array = json_decode($string, true);
 
-	foreach ($json_array["SystemInfo"] as $section => $section_value){
+    foreach ($json_array["SystemInfo"] as $section => $section_value){
         // 获取section
-		echo "section:".($section)."\n";
+        echo "section:".($section)."\n";
 
-	    foreach ($section_value as $key => $value){
+        foreach ($section_value as $key => $value){
             // 迭代输出section属性
             echo "\tkey:".$key.",    value:".$value."\n";
 
@@ -28,5 +28,21 @@
             // 这里一定要赋值一下
             $cpuInfo = "";
         }
-	}
+    }
+
+    echo "\n----------------------------------------------------\n\n";
+    
+    // parse json string and add attributes
+    $string = 
+    '{ 
+        "a" : 1, 
+        "b" : 2,
+        "c" : 3,
+        "d" : 4,
+        "e" : 5
+    }';
+
+    $json_array = json_decode($string, true);
+    $json_array["zengjf"] = "zengjf";
+    print_r($json_array);
 ?>
