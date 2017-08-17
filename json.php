@@ -44,5 +44,6 @@
 
     $json_array = json_decode($string, true);
     $json_array["zengjf"] = "zengjf";
-    print_r($json_array);
+    // print_r($json_array);
+    echo json_encode($json_array);
 ?>
